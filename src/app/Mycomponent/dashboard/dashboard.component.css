@@ -48,10 +48,10 @@
 
   .adduser{
       margin-left: 1mm;
-      border-radius: 0.9mm;
+      border-radius: 0.7mm;
       width: 2.5cm;
-      height: 1cm;
-      background-color: rgb(5, 180, 5);
+      height: 0.8cm;
+      background-color: rgb(33, 212, 33);
   }
 
   .add-button{
@@ -60,7 +60,7 @@
   }
 
   .addimg{
-    margin-left: 14cm;
+    margin-left: 14.8cm;
     height: 0.8cm;
     width: 1cm;
    border-radius: 1.5cm;
