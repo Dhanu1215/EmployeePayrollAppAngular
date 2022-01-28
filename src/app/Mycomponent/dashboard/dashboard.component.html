@@ -13,7 +13,7 @@
             <div class='main'>
                 <h1 class='form-head'>Employee Details 
                 <img class='addimg' src = './assets/add.png'/>
-                    <button class='adduser'><a routerLink="/form" >+Add</a></button>
+                    <button class='adduser' (click)="addEmployees()">+Add</button>
                 </h1>
             </div>
         </div>
@@ -34,17 +34,23 @@
         </thead>
        
         <tbody >
-          <tr class='content'>
-            <th scope="row">1</th>
-            <td class='pro'><img src='./assets/Ellipse-4.png'/></td>
-            <td class='pro'>Dhanashree Sambhaji Hakke</td>
-            <td class='name'>Female</td>
-            <td class='pro'>Hr</td>
-            <td class='pro'>1-2</td>
-            <td class='pro'>12/03/1997</td>
-            <td class='pro'>Hi</td>
-            <td class='pro'><img class='edit' src='./assets/edit.png'/>
-            <img class='delete' src='./assets/delete.png'/>
+            <tr class='content' *ngFor="let employees of emp.data">
+            <th scope="row">{{employees.employeeId}}</th>
+            <td>
+              <img src="../assets/Ellipse -3.png" *ngIf="employees.profilePic==1" alt="">
+              <img src="../assets/Ellipse -2.png" *ngIf="employees.profilePic==2" alt="">
+              <img src="../assets/Ellipse -1.png" *ngIf="employees.profilePic==3" alt="">
+              <img src="../assets/Ellipse-4.png" *ngIf="employees.profilePic==4" alt="">
+          </td>
+            <td class='pro'>{{employees.name}}</td>
+            <td class='name'>{{employees.gender}}</td>
+            <td class='pro'>{{employees.department}}</td>
+            <td class='pro'>{{employees.salary}}</td>
+            <td class='pro'>{{employees.startdate}}</td>
+            <td class='pro'>{{employees.note}}</td>
+            <td class='pro'>
+              <img class='edit' src='./assets/edit.png' />
+              <img class='delete' (click)="remove(employees.employeeId)" src='./assets/delete.png'/>
             </td>
           </tr>
         </tbody>

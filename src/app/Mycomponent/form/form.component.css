@@ -122,3 +122,7 @@ body {
     height: 80px;
     width: 12cm;
   }
+  .input-required {
+    margin-left: 2.2cm;
+    width: 10cm;
+  }

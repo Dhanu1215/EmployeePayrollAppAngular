@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './Mycomponent/form/form.component';
 import { DashboardComponent } from './Mycomponent/dashboard/dashboard.component';
 import { HomeComponent } from './Mycomponent/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HomeComponent } from './Mycomponent/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

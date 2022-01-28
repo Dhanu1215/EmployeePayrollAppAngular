@@ -15,6 +15,10 @@ const routes: Routes = [
     path :'form'
   },
   {
+    component:FormComponent,
+    path :'form/:employeeId'
+  },
+  {
     component:DashboardComponent,
     path :'dashboard'
   }

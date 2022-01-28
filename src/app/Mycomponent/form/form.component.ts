@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Employee } from 'src/app/Employee';
+import { EmployeeService } from 'src/app/employee.service';
 
 
 @Component({
@@ -7,40 +9,56 @@ import { NgForm } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
+
 export class FormComponent implements OnInit {
-
-  date = {
-    "day": '',
-    "month": '',
-    "year": ''
-  }
- dept= [{
-   "Hr" : '',
-   "sales" : "",
-   "engineer" : ""
- 
- }]
-  empData = {
-    username: '',
-    notes: '',
-    profile: '',
-    gender: '',
-    department: [],
-    salary: '',
-    startdate: this.date
-  }
   
+  employee = new Employee("",0,"",new Date,"","",[]);
 
-  constructor() { }
+  constructor(private router:Router, private service:EmployeeService) { }
 
   ngOnInit(): void {
   }
+
   handleSubmit() {
-    console.log('form is submitted:', this.empData);
-    console.log(this.empData);
-    
+    console.log(this.employee);
+    this.service.insertEmployee(this.employee).subscribe(data =>console.log(data));
+    this.router.navigate(['dashboard'])
+    alert("Form is Submitted");
   }
 
+  handleBack(){
+    this.router.navigate([''])
+  }
+
+  departmentList: Array<any> = [
+    {
+      name: "HR",
+      value: "HR",
+      checked: false
+
+    },
+    {
+      name: "Sales",
+      value: "Sales",
+      checked: false
+    },
+    {
+      name: "Finance",
+      value: "Finance",
+      checked: false
+    },
+    {
+      name: "Engineer",
+      value: "Engineer",
+      checked: false
+    },
+    {
+      name: "Other",
+      value: "Other",
+      checked: false
+    },
+  ]
+  
 }
 
 
