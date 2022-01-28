@@ -29,35 +29,6 @@ export class FormComponent implements OnInit {
   handleBack(){
     this.router.navigate([''])
   }
-
-  departmentList: Array<any> = [
-    {
-      name: "HR",
-      value: "HR",
-      checked: false
-
-    },
-    {
-      name: "Sales",
-      value: "Sales",
-      checked: false
-    },
-    {
-      name: "Finance",
-      value: "Finance",
-      checked: false
-    },
-    {
-      name: "Engineer",
-      value: "Engineer",
-      checked: false
-    },
-    {
-      name: "Other",
-      value: "Other",
-      checked: false
-    },
-  ]
   
 }
 
