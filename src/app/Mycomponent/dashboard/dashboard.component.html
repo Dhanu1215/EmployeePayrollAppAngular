@@ -1,24 +1,25 @@
 <div>
-    <body>
-        <header class="header-content header">
-            <div class="logo-content">
-                <img src='./assets/logo.png'/>
-                <div>
-                <span class="emp-text">EMPLOYEE</span><br>
-                <span class="emp-text emp-payroll">PAYROLL</span>
-                </div>
-            </div>
-        </header>
-        <div class='main-content'>
-            <div class='main'>
-                <h1 class='form-head'>Employee Details 
-                <img class='addimg' src = './assets/add.png'/>
-                    <button class='adduser' (click)="addEmployees()">+Add</button>
-                </h1>
-            </div>
+
+  <body>
+    <header class="header-content header">
+      <div class="logo-content">
+        <img src='./assets/logo.png' />
+        <div>
+          <span class="emp-text">EMPLOYEE</span><br>
+          <span class="emp-text emp-payroll">PAYROLL</span>
         </div>
-        <div class='table-content'>
-        <table class="table">
+      </div>
+    </header>
+    <div class='main-content'>
+      <div class='main'>
+        <h1 class='form-head'>Employee Details
+          <img class='addimg' src='./assets/add.png' />
+          <button class='adduser' (click)="addEmployees()">+Add</button>
+        </h1>
+      </div>
+    </div>
+    <div class='table-content'>
+      <table class="table">
         <thead class='head'>
           <tr class='head-content'>
             <th class='pro' scope="col">Sr.No</th>
@@ -32,29 +33,29 @@
             <th class='action' scope="col">Action</th>
           </tr>
         </thead>
-       
-        <tbody >
-            <tr class='content' *ngFor="let employees of emp.data">
+
+        <tbody>
+          <tr class='content' *ngFor="let employees of emp.data">
             <th scope="row">{{employees.employeeId}}</th>
             <td>
               <img src="../assets/Ellipse -3.png" *ngIf="employees.profilePic==1" alt="">
               <img src="../assets/Ellipse -2.png" *ngIf="employees.profilePic==2" alt="">
               <img src="../assets/Ellipse -1.png" *ngIf="employees.profilePic==3" alt="">
               <img src="../assets/Ellipse-4.png" *ngIf="employees.profilePic==4" alt="">
-          </td>
+            </td>
             <td class='pro'>{{employees.name}}</td>
             <td class='name'>{{employees.gender}}</td>
-            <td class='pro'>{{employees.department}}</td>
+            <td class='pro'>{{employees.departments}}</td>
             <td class='pro'>{{employees.salary}}</td>
             <td class='pro'>{{employees.startdate}}</td>
             <td class='pro'>{{employees.note}}</td>
             <td class='pro'>
-              <img class='edit' src='./assets/edit.png' />
-              <img class='delete' (click)="remove(employees.employeeId)" src='./assets/delete.png'/>
+              <img class='edit' (click)="edit(employees.employeeId)" src='./assets/edit.png' />
+              <img class='delete' (click)="remove(employees.employeeId)" src='./assets/delete.png' />
             </td>
           </tr>
         </tbody>
-        </table>        
-        </div>
-    </body>
+      </table>
+    </div>
+  </body>
 </div>

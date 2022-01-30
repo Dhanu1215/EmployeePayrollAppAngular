@@ -1,10 +1,15 @@
-.header {
+  body{
+    margin-left: 10%;
+  }
+
+  .header {
     padding: 15px 0;
     border-color: aliceblue;
   }
+
   .header-content {
     display: flex;
-   padding-top: 10px;
+    padding-top: 10px;
     flex-direction: row;
     justify-content: center;
     border-radius: 5mm;
@@ -14,6 +19,7 @@
     margin-left: 5px;
     margin-right: 5px;
   }
+
   .logo-content {
     display: flex;
     flex-direction: row;
@@ -22,6 +28,7 @@
   }
   .logo-content-img {
     border: solid 0px #42515f;
+    
   }
   .emp-text {
     font: normal normal bold 20px/25px Montserrat;
@@ -43,7 +50,7 @@
     padding-top: 8mm;
     font-size:larger;
     font-weight: bold;
-    margin-left: 4cm;
+    margin-left: 3.6cm;
   }
 
   .adduser{
@@ -51,7 +58,7 @@
       border-radius: 0.7mm;
       width: 2.5cm;
       height: 0.8cm;
-      background-color: rgb(33, 212, 33);
+      background-color: rgb(7, 204, 7);
   }
 
   .add-button{
@@ -61,7 +68,7 @@
 
   
   .addimg{
-    margin-left: 14.8cm;
+    margin-left: 13.2cm;
     height: 0.8cm;
     width: 1cm;
    border-radius: 1.5cm;
@@ -69,9 +76,9 @@
   .table-content{
     display: flex;
     font-size: small;
-    width: 68%;
+    width: 70%;
     background-color: white;
-    margin-left: 11%;
+    margin-left: 12%;
   }
   .pro{
     padding-left: 14px;
@@ -86,7 +93,7 @@
     text-transform: uppercase;
     justify-content: center;
     text-align: center;
-    background-color: #a3d3ff;
+    background-color: #5cabf5;
     margin-top: 1cm;
   }
   .content {

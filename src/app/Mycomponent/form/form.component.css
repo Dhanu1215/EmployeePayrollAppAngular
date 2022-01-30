@@ -51,7 +51,7 @@ body {
     padding-right: 20mm;
   }
   .form-head {
-    color: #1a85dd;
+    color: #464a4d;
     padding-top: 8mm;
     font-size:x-large;
     font-weight: bold;
@@ -60,22 +60,22 @@ body {
   .input{
     width: 13cm;
     height: 0.8cm;
-    margin-left: 134px;
+    margin-left: 136px;
   }
   .checkbox{
     margin-left: 25px;
   }
 
   .check {
-    margin-left: 40px;
+    margin-left: 36px;
   }
   
   .profile {
-    margin-left: 29px;
+    margin-left: 27px;
   }
   
   .radio-button{
-    margin-left: 72px;
+    margin-left: 68px;
   }
   .radio-butt{
     margin-left: 20px;
@@ -107,14 +107,14 @@ body {
     height: 0.8cm;
   }
   .date{
-    margin-left: 55px;
+    margin-left: 57px;
   }
   .format{
     margin-left: 20px;
   }
   
   .salary{
-    margin-left: 83px; 
+    margin-left: 80px; 
   }
   
   .area{
