@@ -1,5 +1,4 @@
 <div>
-
     <body>
         <header class="header-content header">
             <div class="logo-content">
@@ -11,7 +10,7 @@
             </div>
         </header>
         <div class='payroll-main'>
-            <form #form='ngForm' (ngSubmit)='handleSubmit()' action="">
+            <form #form='ngForm' action="">
                 <div class='form-head'>Employee Payroll Form</div><br>
                 <div class='row'>
                     <label class='label-text' htmlFor='name'>Name:</label>
@@ -22,7 +21,7 @@
                     <label>Profile image:</label>
                     <label class='profile'>
                         <input type="radio" id='profile1' name='profilePic' [(ngModel)]="employee.profilePic"
-                            value="1"/>
+                            value="1" />
                         <img class='pic' id='image1' src='../assets/Ellipse -3.png' />
                     </label>
                     <label class='profile'>
@@ -51,17 +50,24 @@
                     <label class="text" htmlFor="female">Female</label>
                 </div><br>
                 <div class='row-content'>
-                    <label class="label text" htmlFor="department">Department:</label>
-                    <input class="check" type="checkbox" id="hr" name="department" value="HR" />
-                    <label class="text" htmlFor="hr">HR</label>
-                    <input class="checkbox" type="checkbox" id="sales" name="department"   value="Sales" />
-                    <label class="text" htmlFor="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" id="finance" name="department"   value="Finance" />
-                    <label class="text" htmlFor="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" id="engineer" name="department"  value="Engineer" />
-                    <label class="text" htmlFor="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" id="others" name="department"  value="Others" />
-                    <label class="text" htmlFor="others">Others</label>
+                    <label class="label text" for="department">Department:</label>
+
+                    <input type="checkbox" class="check" id="hr" (click)="getValue('HR')"
+                        [ngModel]="employee.departments=='HR'" name="department1" value="HR">
+                    <label for="hr">HR</label>
+                    <input type="checkbox" class="checkbox" id="sales" (click)="getValue('Sales')"
+                        [ngModel]="employee.departments=='Sales'" name="department2" value="Sales">
+                    <label for="sales">Sales</label>
+                    <input type="checkbox" class="checkbox" id="finance" (click)="getValue('Finance')"
+                        [ngModel]="employee.departments=='Finance'" name="department3" value="Finance">
+                    <label for="finance">Finance</label>
+                    <input type="checkbox" class="checkbox" id="engineer" (click)="getValue('Engineer')"
+                        [ngModel]="employee.departments=='Engineer'" name="department4" value="Engineer">
+                    <label for="engineer">Engineer</label>
+                    <input type="checkbox" class="checkbox" (click)="getValue('Others')"
+                        [ngModel]="employee.departments=='Others'" name="department5" value="Others">
+                    <label for="others">Others</label>
+
                 </div><br>
                 <div class='row-content'>
                     <label class='label-text' htmlFor='salary'>Salary:</label>
@@ -80,16 +86,18 @@
                 </div><br>
                 <div class="row-content">
                     <label class="lable text" htmlFor="note">Notes:</label>
-                    <textarea class="area" id="notes" name="note" [(ngModel)]='employee.note'
-                        placeholder=""></textarea>
+                    <textarea class="area" id="notes" name="note" [(ngModel)]='employee.note' placeholder=""></textarea>
                 </div><br>
-                <div class="buttonParent">
-                    <div class="submit-reset">
-                        <button class="cancleButton" (click)="handleBack()">Cancel</button>
-                        <button type="submit" class="button submitButton">Submit</button>
-                        <button type="reset" class="button resetButton">Reset</button>
-                    </div>
-                </div><br>
+                <!-- <div class="buttonParent"> -->
+                <div class="submit-reset">
+                    <button class="cancleButton" (click)="handleBack()">Cancel</button>
+
+                    <button type="submit" class="button submitButton" *ngIf='this.id==null'
+                        (click)='handleSubmit()'>Submit</button>
+                    <button class="button submitButton" *ngIf='this.id!=null' (click)='handleUpdate()'>Update</button>
+                    <button type="reset" class="button resetButton">Reset</button>
+                </div>
+                <!-- </div><br> -->
             </form>
         </div>
     </body>

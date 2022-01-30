@@ -4,7 +4,7 @@ import { DashboardComponent } from './Mycomponent/dashboard/dashboard.component'
 import { FormComponent } from './Mycomponent/form/form.component';
 import { HomeComponent } from './Mycomponent/home/home.component';
 
-
+//Routing paths for component for navigation
 const routes: Routes = [
   {
     component:HomeComponent,
